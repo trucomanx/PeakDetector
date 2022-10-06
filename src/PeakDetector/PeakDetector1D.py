@@ -2,7 +2,7 @@
 # importing numpy
 import numpy as np
 
-class PeakDetector:
+class PeakDetector1D:
     
     def __init__(self):
         self.N = 256;
