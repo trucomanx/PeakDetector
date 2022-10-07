@@ -1,3 +1,3 @@
 #!/usr/bin/python
 
-from PeakDetector.PeakDetector import *
+from PeakDetector.PeakDetector1D import *
