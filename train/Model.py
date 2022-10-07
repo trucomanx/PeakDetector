@@ -83,7 +83,7 @@ def create_model2():
         model.add(  Conv1D( input_shape=(Nin, 1),
                             filters=8, 
                             kernel_size=3, 
-                            padding='full', 
+                            padding='same', 
                             activation=tf.keras.layers.LeakyReLU(alpha=0.1)#'relu'
                           )
                  );
@@ -92,7 +92,7 @@ def create_model2():
         
         model.add(  Conv1D( filters=8, 
                             kernel_size=3, 
-                            padding='full', 
+                            padding='same', 
                             activation=tf.keras.layers.LeakyReLU(alpha=0.1)#'relu'
                           )
                  );
@@ -101,7 +101,7 @@ def create_model2():
         
         model.add(  Conv1D( filters=8, 
                             kernel_size=3, 
-                            padding='full', 
+                            padding='same', 
                             activation=tf.keras.layers.LeakyReLU(alpha=0.1)#'relu'
                           )
                  );
@@ -111,7 +111,7 @@ def create_model2():
         
         model.add(  Conv1D( filters=1, 
                             kernel_size=7, 
-                            padding='full', 
+                            padding='same', 
                             activation=tf.keras.layers.LeakyReLU(alpha=0.1)#'relu'
                           )
                  );
