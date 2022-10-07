@@ -9,6 +9,7 @@ from Model import create_model
 output_dir='output'
 EPOCAS=100;
 BATCH_SIZE=32;
+NPEAK=5;
 
 try: 
     os.mkdir(output_dir)
@@ -19,8 +20,8 @@ except:
 model=create_model();
 
 from CustomDataGenerator import CustomDataGenerator
-training_generator   = CustomDataGenerator(100000,batch_size=BATCH_SIZE);
-validation_generator = CustomDataGenerator( 20000,batch_size=BATCH_SIZE,validation=True);
+training_generator   = CustomDataGenerator(100000,batch_size=BATCH_SIZE,max_peak_count=NPEAK);
+validation_generator = CustomDataGenerator( 20000,batch_size=BATCH_SIZE,max_peak_count=NPEAK,validation=True);
 
 best_model_file=os.path.join(output_dir,'model.h5');
 

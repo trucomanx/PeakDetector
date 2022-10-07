@@ -16,7 +16,7 @@ def create_model():
                             filters=8, 
                             kernel_size=5, 
                             padding='same', 
-                            activation='relu'
+                            activation=tf.keras.layers.LeakyReLU(alpha=0.1)#'relu'
                           )
                  );
         
@@ -26,7 +26,7 @@ def create_model():
                             filters=8, 
                             kernel_size=7, 
                             padding='same', 
-                            activation='relu'
+                            activation=tf.keras.layers.LeakyReLU(alpha=0.1)#'relu'
                           )
                  );
         
@@ -36,7 +36,7 @@ def create_model():
                             filters=8, 
                             kernel_size=9, 
                             padding='same', 
-                            activation='relu'
+                            activation=tf.keras.layers.LeakyReLU(alpha=0.1)#'relu'
                           )
                  );
                  
@@ -46,7 +46,7 @@ def create_model():
                             filters=4, 
                             kernel_size=11, 
                             padding='same', 
-                            activation='relu'
+                            activation=tf.keras.layers.LeakyReLU(alpha=0.1)#'relu'
                           )
                  );
         
