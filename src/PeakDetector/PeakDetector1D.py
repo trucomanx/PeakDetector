@@ -11,14 +11,14 @@ class PeakDetector1D:
     
     def GenerateRandomVector(   self,
                                 func_list=['exp1','gaussian'],
-                                peak_cout=3,
+                                peak_count=3,
                                 sigma_min=0.1,
                                 sigma_max=6,
                                 amp_min=0.15,
                                 amp_max=1.0,
                                 noise_level=0.05):
         
-        if peak_cout<=0:
+        if peak_count<=0:
             return sys.exit();
         if amp_min<=0:
             return sys.exit();
@@ -38,9 +38,9 @@ class PeakDetector1D:
         vec=np.zeros(self.N);
         bec=np.zeros(self.N);
         
-        peak_cout=int(peak_cout);
+        peak_count=int(peak_count);
         
-        for n in range(peak_cout):
+        for n in range(peak_count):
             ID=randint(0, len(func_list)-1);
             ti=randint(0, self.N-1);
             sigmai=sigma_min+random()*(sigma_max-sigma_min);
