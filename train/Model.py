@@ -81,35 +81,44 @@ def create_model2():
         model = Sequential()
 
         model.add(  Conv1D( input_shape=(Nin, 1),
-                            filters=8, 
-                            kernel_size=3, 
+                            filters=16, 
+                            kernel_size=7, 
                             padding='same', 
                             activation=tf.keras.layers.LeakyReLU(alpha=0.1)#'relu'
                           )
                  );
         
-        model.add(MaxPooling1D(pool_size=2))
+        model.add(MaxPooling1D(pool_size=2))#128
         
-        model.add(  Conv1D( filters=8, 
-                            kernel_size=3, 
+        model.add(  Conv1D( filters=16, 
+                            kernel_size=7, 
                             padding='same', 
                             activation=tf.keras.layers.LeakyReLU(alpha=0.1)#'relu'
                           )
                  );
         
-        model.add(MaxPooling1D(pool_size=2))
+        model.add(MaxPooling1D(pool_size=2))#64
         
-        model.add(  Conv1D( filters=8, 
-                            kernel_size=3, 
+        model.add(  Conv1D( filters=16, 
+                            kernel_size=7, 
                             padding='same', 
                             activation=tf.keras.layers.LeakyReLU(alpha=0.1)#'relu'
                           )
                  );
                  
         
-        #model.add(MaxPooling1D(pool_size=2))
+        model.add(MaxPooling1D(pool_size=2))#32
         
-        model.add(  Conv1D( filters=1, 
+        model.add(  Conv1D( filters=16, 
+                            kernel_size=7, 
+                            padding='same', 
+                            activation=tf.keras.layers.LeakyReLU(alpha=0.1)#'relu'
+                          )
+                 );
+        
+        model.add(MaxPooling1D(pool_size=2))#16
+        
+        model.add(  Conv1D( filters=16, 
                             kernel_size=7, 
                             padding='same', 
                             activation=tf.keras.layers.LeakyReLU(alpha=0.1)#'relu'
@@ -117,7 +126,7 @@ def create_model2():
                  );
         
         model.add(Flatten())
-        model.add(Dense(units=int(Nin/4), activation='tanh'))
+        #model.add(Dense(units=int(Nin/8), activation='tanh'))
         model.add(Dense(units=Nout, activation='sigmoid'))
 
         model.compile(optimizer='adam', loss='mean_squared_error', metrics=['accuracy'])
