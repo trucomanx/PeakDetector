@@ -13,18 +13,8 @@ def create_model():
         model = Sequential()
 
         model.add(  Conv1D( input_shape=(Nin, 1),
-                            filters=32, 
-                            kernel_size=7, 
-                            padding='same', 
-                            activation='relu'
-                          )
-                 );
-        
-        #model.add(MaxPooling1D(pool_size=2))
-        
-        model.add(  Conv1D( input_shape=(Nin, 1),
-                            filters=16, 
-                            kernel_size=15, 
+                            filters=8, 
+                            kernel_size=5, 
                             padding='same', 
                             activation='relu'
                           )
@@ -34,9 +24,19 @@ def create_model():
         
         model.add(  Conv1D( input_shape=(Nin, 1),
                             filters=8, 
-                            kernel_size=15, 
+                            kernel_size=7, 
                             padding='same', 
-                            activation='tanh'
+                            activation='relu'
+                          )
+                 );
+        
+        #model.add(MaxPooling1D(pool_size=2))
+        
+        model.add(  Conv1D( input_shape=(Nin, 1),
+                            filters=8, 
+                            kernel_size=9, 
+                            padding='same', 
+                            activation='relu'
                           )
                  );
                  
@@ -44,7 +44,7 @@ def create_model():
         
         model.add(  Conv1D( input_shape=(Nin, 1),
                             filters=4, 
-                            kernel_size=15, 
+                            kernel_size=11, 
                             padding='same', 
                             activation='relu'
                           )
@@ -54,7 +54,7 @@ def create_model():
         
         model.add(  Conv1D( input_shape=(Nin, 1),
                             filters=2, 
-                            kernel_size=15, 
+                            kernel_size=13, 
                             padding='same', 
                             activation='tanh'
                           )
@@ -72,10 +72,10 @@ def create_model():
         
         model.add(Flatten())
         
-        #model.add(Dense(units=Nout, activation='sigmoid'))
+        model.add(Dense(units=Nout, activation='sigmoid'))
 
         model.compile(optimizer='adam', loss='mean_squared_error', metrics=['accuracy'])
         
-        print(model.summary())
+        model.summary()
         
         return model 
