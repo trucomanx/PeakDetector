@@ -48,8 +48,8 @@ class CustomDataGenerator(tf.keras.utils.Sequence):
     def __temporal_data_generation(self):
         'Generates data containing batch_size samples'  
         # Initialization
-        X = np.zeros((self.batch_size, self.Nel))
-        y = np.zeros((self.batch_size, self.Nel))
+        X = np.zeros((self.batch_size, self.Nel,1))
+        y = np.zeros((self.batch_size, self.Nel,1))
 
         # Generate data
         for i in range(self.batch_size):
@@ -63,9 +63,9 @@ class CustomDataGenerator(tf.keras.utils.Sequence):
                                                     amp_max=1.0,
                                                     noise_level=0.05
                                                 );
-            X[i,] = vec;
+            X[i,] = np.reshape(vec,(self.Nel,1));
 
             # Store class
-            y[i,] = bec;
+            y[i,] = np.reshape(bec,(self.Nel,1));
 
         return X, y
