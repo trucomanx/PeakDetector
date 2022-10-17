@@ -5,7 +5,7 @@ import sys
 sys.path.append('../src')
 
 import PeakDetector as pkpet
-import matplotlib.pyplot as plt
+
 
 Det=pkpet.PeakDetector1D();
 vec_input,vec_target=Det.GenerateRandomVector(  func_list=['exp1','gaussian'],
@@ -23,8 +23,8 @@ import numpy as np
 nv=np.linspace(0,len(vec_input)-1,len(vec_input));
 
 
+import matplotlib.pyplot as plt
 fig, axs = plt.subplots(3)
-fig.suptitle('Vertically stacked subplots')
 
 axs[0].plot(nv,vec_input)
 axs[0].set_title('Input');
@@ -34,5 +34,7 @@ axs[1].set_title('Target');
 
 axs[2].plot(nv,vec_predict);
 axs[2].set_title('Predict');
+
+fig.subplots_adjust(hspace=0.5)
 plt.show()
 
