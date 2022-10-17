@@ -10,12 +10,12 @@ Get the last version of PeakDetector using the next command
 
     git clone https://github.com/trucomanx/PeakDetector.git
 
-Add the library to ptython system path.
+Add the library to python system path.
 
     import sys
     sys.path.append('PeakDetector/src')
 
-If we have a input vector called `vec_input` then, using the next code, the peaks in the input vector will be returned in the predicted vector `vec_predict`.
+If we have an input vector called `vec_input` then, using the next code, the peaks in the input vector will be returned in the predicted vector `vec_predict`.
 
     import PeakDetector as pkpet
     

@@ -23,7 +23,7 @@ class PeakDetector1D:
         bec=self.model.predict(dat,verbose=False);
         bec=np.reshape(bec,(self.N,));
         
-        return bec;
+        return bec>0.5;
     
     
     def GenerateRandomVector(   self,
