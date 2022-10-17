@@ -23,6 +23,7 @@ If we have an input vector called `vec_input` then, using the next code, the pea
     vec_predict=Det.FindPeaks(vec_input);
 
 The input vector `vec_input` should be a numpy 1D array of 256 elements with values between 0 and 1.
+The predicted vector `vec_predict` is a numpy 1D array of 256 elements with binary values, 0 or 1. 
 
 The next image shows the input vector and the predicted vector.
 
@@ -30,4 +31,4 @@ The next image shows the input vector and the predicted vector.
 
 ## Example
 
-An simple use example can be found in `tests/ploting_samples.py`
+A simple use example can be found in `tests/ploting_samples.py`
