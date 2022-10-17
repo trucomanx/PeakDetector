@@ -2,9 +2,13 @@
 
 import tensorflow as tf
 import os
-from Model import create_model
-from Model import create_model2
-from Model import create_model_residual1
+
+import sys
+sys.path.append('../src')
+
+from PeakDetector.Model import create_model
+from PeakDetector.Model import create_model2
+from PeakDetector.Model import create_model_residual1
 
 """# Global variables"""
 

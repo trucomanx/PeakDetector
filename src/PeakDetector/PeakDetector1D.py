@@ -3,11 +3,28 @@
 import numpy as np
 from random import randint
 from random import random
+import PeakDetector.Model as model_lib
+import os
 
 class PeakDetector1D:
     
     def __init__(self):
         self.N = 256;
+        
+        path_lib=os.path.abspath(os.path.dirname(__file__));
+        path_model=os.path.join(path_lib,"model","model_residual1.h5")
+
+        self.model=model_lib.create_model_residual1(enable_summary=False);
+        self.model.load_weights(path_model);
+    
+    def FindPeaks(   self, vec):
+        dat=np.reshape(vec,(1,self.N,1));
+        
+        bec=self.model.predict(dat,verbose=False);
+        bec=np.reshape(bec,(self.N,));
+        
+        return bec;
+    
     
     def GenerateRandomVector(   self,
                                 func_list=['exp1','gaussian'],

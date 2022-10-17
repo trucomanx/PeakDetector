@@ -171,7 +171,7 @@ def residual_block( x:           Tensor,
     
     return out
     
-def create_model_residual1():
+def create_model_residual1(enable_summary=True):
     Nin=Nout=256;
     
     inputs = Input(shape=(Nin, 1))
@@ -232,6 +232,7 @@ def create_model_residual1():
     
     model.compile(optimizer='adam', loss='mean_squared_error', metrics=['accuracy']);
     
-    model.summary()
+    if enable_summary:
+        model.summary();
     
     return model 
