@@ -31,4 +31,5 @@ The next image shows the input vector and the predicted vector.
 
 ## Example
 
-A simple use example can be found in `tests/ploting_samples.py`
+A simple use example can be found in `tests/ploting_samples.py`.
+Another example can be found in [Google Colab](https://colab.research.google.com/drive/1PHoMrquMd8tL7rNdtn4FXKwSEA8ZgfiB?usp=sharing).
