@@ -13,7 +13,7 @@ from PeakDetector.Model import create_model_residual1
 """# Global variables"""
 
 output_dir='output'
-EPOCAS=50;
+EPOCAS=200;
 BATCH_SIZE=64;
 NPEAK=5;
 
@@ -27,12 +27,12 @@ except:
 """
 
 model=create_model_residual1();
-model.load_weights("data/model_residual1_101-200epochs.h5")
+model.load_weights("data/model_residual1_601-800epochs.h5")
 
 
-from keras.utils.vis_utils import plot_model
+#from keras.utils.vis_utils import plot_model
 
-plot_model(model, to_file='model.png', show_shapes=True, show_layer_names=True)
+#plot_model(model, to_file='model.png', show_shapes=True, show_layer_names=True)
 
 """# Data generator"""
 
